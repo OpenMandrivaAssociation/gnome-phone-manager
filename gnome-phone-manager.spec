@@ -13,6 +13,9 @@ Patch0:		gnome-phone-manager-0.6-new-openobex.patch
 Patch1:		gnome-phone-manager-0.7-fixicon.patch
 # (fc) 0.7-3mdv fix build with eds 1.8 (gnome bug #349726)
 Patch2:		gnome-phone-manager-0.7-eds18.patch
+# From GNOME bug #349259 - drops use of libegg. Obsolete when we go
+# to gnome-phone-manager 0.10. - AdamW 2007/09
+Patch3:		gnome-phone-manager-0.8-libegg.patch
 URL:		http://usefulinc.com/software/phonemgr/
 License:	GPLv2+
 Group:		Communications
@@ -26,6 +29,7 @@ BuildRequires:	librsvg-devel
 BuildRequires:  GConf2
 BuildRequires:	libevolution-data-server-devel
 BuildRequires:	desktop-file-utils
+BuildRequires:	automake
 Requires:	pygtk2.0-libglade
 
 %description
@@ -49,9 +53,10 @@ a serial port: via Bluetooth, IrDA or a serial cable.
 %prep
 %setup -q
 %patch0 -p1
+%patch3 -p0 -b .libegg
 
-#needed by patches 0 & 2
-autoconf
+#needed by patches 0, 2 and 3
+autoreconf
 
 %build
 %configure2_5x --enable-shared --enable-static
