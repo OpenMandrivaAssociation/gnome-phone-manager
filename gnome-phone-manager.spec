@@ -23,7 +23,6 @@ BuildRequires:	libevolution-data-server-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	automake
 BuildRequires:  libgstreamer0.10-devel
-BuildRequires:	libtelepathy-devel
 Requires:	pygtk2.0-libglade
 
 %description
