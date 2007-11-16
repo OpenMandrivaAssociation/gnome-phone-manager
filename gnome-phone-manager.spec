@@ -1,6 +1,7 @@
 %define name	gnome-phone-manager
 %define version	0.40
-%define release %mkrel 1
+%define release %mkrel 2
+%define schemas gnome-phone-manager
 
 Name: 	 	%{name}
 Summary: 	GNOME Cellular Phone Manager
@@ -15,7 +16,7 @@ BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	gettext intltool ImageMagick
 BuildRequires:	libbtctl-devel >= 0.6
 BuildRequires:	libgnomebt-devel
-BuildRequires:	libgnokii-devel
+BuildRequires:	libgnokii-devel gnokii
 BuildRequires:	libglade2.0-devel libgnomeui2-devel
 BuildRequires:	librsvg-devel
 BuildRequires:  GConf2
