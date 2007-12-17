@@ -12,7 +12,6 @@ Source:		ftp://ftp.gnome.org/pub/gnome/sources/gnome-phone-manager/%version/%{na
 URL:		http://usefulinc.com/software/phonemgr/
 License:	GPLv2+
 Group:		Communications
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	gettext intltool ImageMagick
 BuildRequires:	libbtctl-devel >= 0.6
 BuildRequires:	libgnomebt-devel
