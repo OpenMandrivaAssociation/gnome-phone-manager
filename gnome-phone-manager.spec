@@ -1,5 +1,5 @@
 %define name	gnome-phone-manager
-%define version	0.50
+%define version	0.51
 %define release %mkrel 1
 %define schemas gnome-phone-manager
 
@@ -9,7 +9,7 @@ Version: 	%{version}
 Release: 	%{release}
 
 Source:		ftp://ftp.gnome.org/pub/gnome/sources/gnome-phone-manager/%version/%{name}-%{version}.tar.bz2
-URL:		http://usefulinc.com/software/phonemgr/
+URL:		http://live.gnome.org/PhoneManager
 License:	GPLv2+
 Group:		Communications
 BuildRoot:	%{_tmppath}/%{name}-buildroot
