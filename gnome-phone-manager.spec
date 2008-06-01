@@ -53,7 +53,7 @@ a serial port: via Bluetooth, IrDA or a serial cable.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 
 desktop-file-install --vendor="" \
   --add-category="GTK" \
