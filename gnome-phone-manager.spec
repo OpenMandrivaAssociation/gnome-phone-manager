@@ -24,6 +24,7 @@ BuildRequires:	libevolution-data-server-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	automake
 BuildRequires:  gstreamer0.10-devel
+BuildRequires:	gtkspell-devel
 Requires:	pygtk2.0-libglade
 
 %description
