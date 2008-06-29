@@ -1,5 +1,5 @@
 %define name	gnome-phone-manager
-%define version	0.51
+%define version	0.60
 %define release %mkrel 1
 %define schemas gnome-phone-manager
 
@@ -7,7 +7,6 @@ Name: 	 	%{name}
 Summary: 	GNOME Cellular Phone Manager
 Version: 	%{version}
 Release: 	%{release}
-
 Source:		ftp://ftp.gnome.org/pub/gnome/sources/gnome-phone-manager/%version/%{name}-%{version}.tar.bz2
 URL:		http://live.gnome.org/PhoneManager
 License:	GPLv2+
@@ -21,6 +20,7 @@ BuildRequires:	libglade2.0-devel libgnomeui2-devel
 BuildRequires:	librsvg-devel
 BuildRequires:  GConf2
 BuildRequires:	libevolution-data-server-devel
+BuildRequires:	dbus-glib-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	automake
 BuildRequires:  gstreamer0.10-devel
