@@ -28,22 +28,17 @@ BuildRequires:	gtkspell-devel
 Requires:	pygtk2.0-libglade
 
 %description
-Phone Manager is a program created to allow you to control aspects of your
-mobile phone from your GNOME 2 desktop. It is free software, licensed under
-the GPL.
+Phone Manager allows you to control aspects of your mobile phone from the
+GNOME 2 desktop.
 
-The software is in its early stages right now. Current features include:
+Current features include:
     * Runs in the background; indicates status on the panel notification area.
     * Display on-screen alert when text message (SMS) arrives
     * Text message (SMS) sending facility
+    * Evolution Addressbook integration when sending messages 
 
-Features planned in the near future include:
-    * Addressbook integration
-    * Call monitoring and dialing
-    * Send cluepackets to Dashboard about incoming messages
-
-Phone Manager supports any mobile phone that can connect to your computer as
-a serial port: via Bluetooth, IrDA or a serial cable.
+Phone Manager supports any mobile phone that can connect to your computer as a
+serial port: via Bluetooth, IrDA, or a serial cable.
 
 %prep
 %setup -q
