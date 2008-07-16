@@ -1,6 +1,6 @@
 %define name	gnome-phone-manager
 %define version	0.60
-%define release %mkrel 1
+%define release %mkrel 2
 %define schemas gnome-phone-manager
 
 Name: 	 	%{name}
@@ -25,6 +25,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	automake
 BuildRequires:  gstreamer0.10-devel
 BuildRequires:	gtkspell-devel
+BuildRequires:  libtelepathy-glib-devel
 Requires:	pygtk2.0-libglade
 
 %description
@@ -86,3 +87,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%name
 %{_datadir}/applications/*.desktop
 %{_mandir}/man1/*
+%_libexecdir/telepathy-phoney
+%_datadir/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.phoney.service
+%_datadir/telepathy/managers/phoney.manager
