@@ -12,7 +12,7 @@ URL:		http://live.gnome.org/PhoneManager
 License:	GPLv2+
 Group:		Communications
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	gettext intltool ImageMagick
+BuildRequires:	gettext intltool imagemagick
 BuildRequires:	libbtctl-devel >= 0.6
 BuildRequires:	libgnomebt-devel
 BuildRequires:	libgnokii-devel gnokii
