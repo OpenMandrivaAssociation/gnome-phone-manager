@@ -28,6 +28,7 @@ BuildRequires:  gstreamer0.10-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:  libtelepathy-glib-devel
 BuildRequires:	intltool
+BuildRequires:	libcanberra-devel
 Requires:	pygtk2.0-libglade
 
 %description
