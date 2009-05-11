@@ -17,14 +17,13 @@ BuildRequires:	gettext intltool imagemagick
 BuildRequires:	libbtctl-devel >= 0.6
 BuildRequires:	gnome-bluetooth-devel
 BuildRequires:	libgnokii-devel gnokii
-BuildRequires:	libglade2.0-devel libgnomeui2-devel
+BuildRequires:	libglade2.0-devel
 BuildRequires:	librsvg-devel
-BuildRequires:  GConf2
+BuildRequires:  libGConf2-devel
 BuildRequires:	libevolution-data-server-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	desktop-file-utils
 BuildRequires:	automake
-BuildRequires:  gstreamer0.10-devel
 BuildRequires:	gtkspell-devel
 BuildRequires:  libtelepathy-glib-devel
 Requires:	pygtk2.0-libglade
