@@ -1,6 +1,6 @@
 %define name	gnome-phone-manager
-%define version	0.60
-%define release %mkrel 4
+%define version	0.65
+%define release %mkrel 1
 %define schemas gnome-phone-manager
 
 Name: 	 	%{name}
@@ -8,14 +8,14 @@ Summary: 	GNOME Cellular Phone Manager
 Version: 	%{version}
 Release: 	%{release}
 Source:		ftp://ftp.gnome.org/pub/gnome/sources/gnome-phone-manager/%version/%{name}-%{version}.tar.bz2
-Patch: gnome-phone-manager-0.60-format-strings.patch
+Patch:		gnome-phone-manager-0.65-format-strings.patch
 URL:		http://live.gnome.org/PhoneManager
 License:	GPLv2+
 Group:		Communications
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	gettext intltool imagemagick
 BuildRequires:	libbtctl-devel >= 0.6
-BuildRequires:	libgnomebt-devel
+BuildRequires:	libgnome-bluetooth-devel
 BuildRequires:	libgnokii-devel gnokii
 BuildRequires:	libglade2.0-devel libgnomeui2-devel
 BuildRequires:	librsvg-devel
