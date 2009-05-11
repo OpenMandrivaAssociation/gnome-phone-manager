@@ -27,7 +27,6 @@ BuildRequires:	automake
 BuildRequires:	gtkspell-devel
 BuildRequires:  libtelepathy-glib-devel
 BuildRequires:  libcanberra-devel
-Requires:	pygtk2.0-libglade
 
 %description
 Phone Manager allows you to control aspects of your mobile phone from the
