@@ -26,6 +26,7 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	automake
 BuildRequires:	gtkspell-devel
 BuildRequires:  libtelepathy-glib-devel
+BuildRequires:  libcanberra-devel
 Requires:	pygtk2.0-libglade
 
 %description
