@@ -15,7 +15,7 @@ Group:		Communications
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	gettext intltool imagemagick
 BuildRequires:	libbtctl-devel >= 0.6
-BuildRequires:	libgnome-bluetooth-devel
+BuildRequires:	gnome-bluetooth-devel
 BuildRequires:	libgnokii-devel gnokii
 BuildRequires:	libglade2.0-devel libgnomeui2-devel
 BuildRequires:	librsvg-devel
