@@ -26,7 +26,11 @@ BuildRequires:	desktop-file-utils
 BuildRequires:	automake
 BuildRequires:	gtkspell-devel
 BuildRequires:  libtelepathy-glib-devel
+%if %mdvver >= 201100
 BuildRequires:  libcanberra-gtk-devel
+%else
+BuildRequires:  libcanberra-devel
+%endif
 
 %description
 Phone Manager allows you to control aspects of your mobile phone from the
