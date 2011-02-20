@@ -20,6 +20,7 @@ BuildRequires:	libgnokii-devel gnokii
 BuildRequires:	libglade2.0-devel
 BuildRequires:	librsvg-devel
 BuildRequires:  libGConf2-devel
+BuildRequires:  gnome-icon-theme
 BuildRequires:	libevolution-data-server-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	desktop-file-utils
