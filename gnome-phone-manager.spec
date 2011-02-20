@@ -1,6 +1,6 @@
 %define name	gnome-phone-manager
-%define version	0.65
-%define release %mkrel 6
+%define version	0.66
+%define release %mkrel 1
 %define schemas gnome-phone-manager
 
 Name: 	 	%{name}
@@ -47,7 +47,6 @@ serial port: via Bluetooth, IrDA, or a serial cable.
 
 %prep
 %setup -q
-%patch -p1
 
 %build
 %configure2_5x --enable-shared --enable-static
@@ -64,6 +63,7 @@ desktop-file-install --vendor="" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
 %find_lang %name
+rm -fv %buildroot%_libdir/gnome-bluetooth/plugins/libphonemgr.a
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -93,5 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/applications/*.desktop
 %{_mandir}/man1/*
 %_libexecdir/telepathy-phoney
+%_libdir/gnome-bluetooth/plugins/libphonemgr.*
 %_datadir/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.phoney.service
 %_datadir/telepathy/managers/phoney.manager
