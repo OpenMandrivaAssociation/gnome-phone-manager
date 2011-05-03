@@ -1,6 +1,6 @@
 %define name	gnome-phone-manager
 %define version	0.66
-%define release %mkrel 1
+%define release %mkrel 2
 %define schemas gnome-phone-manager
 
 Name: 	 	%{name}
