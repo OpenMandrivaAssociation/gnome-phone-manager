@@ -54,20 +54,20 @@ serial port: via Bluetooth, IrDA, or a serial cable.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 desktop-file-install --vendor="" \
   --add-category="GTK" \
   --add-category="GNOME" \
   --remove-category="Application" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %find_lang %name
 rm -fv %buildroot%_libdir/gnome-bluetooth/plugins/libphonemgr.a
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post
