@@ -1,30 +1,28 @@
-%define name	gnome-phone-manager
-%define version	0.66
-%define release %mkrel 4
 %define schemas gnome-phone-manager
 
-Name: 	 	%{name}
+Name: 	 	gnome-phone-manager
 Summary: 	GNOME Cellular Phone Manager
-Version: 	%{version}
-Release: 	%{release}
-Source:		ftp://ftp.gnome.org/pub/gnome/sources/gnome-phone-manager/%version/%{name}-%{version}.tar.bz2
-Patch:		gnome-phone-manager-0.65-format-strings.patch
-URL:		http://live.gnome.org/PhoneManager
+Version: 	0.68
+Release: 	1
 License:	GPLv2+
 Group:		Communications
-BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	gettext intltool imagemagick
+URL:		http://live.gnome.org/PhoneManager
+Source0:	ftp://ftp.gnome.org/pub/gnome/sources/gnome-phone-manager/%{version}/%{name}-%{version}.tar.xz
+Patch0:		gnome-phone-manager-0.65-format-strings.patch
+
+BuildRequires:	desktop-file-utils
+BuildRequires:	gettext
+BuildRequires:  gnome-icon-theme
+BuildRequires:	imagemagick
+BuildRequires:	intltool
 BuildRequires:	libbtctl-devel >= 0.6
 BuildRequires:	gnome-bluetooth-devel
 BuildRequires:	libgnokii-devel gnokii
 BuildRequires:	libglade2.0-devel
 BuildRequires:	librsvg-devel
 BuildRequires:  libGConf2-devel
-BuildRequires:  gnome-icon-theme
 BuildRequires:	libevolution-data-server-devel
 BuildRequires:	dbus-glib-devel
-BuildRequires:	desktop-file-utils
-BuildRequires:	automake
 BuildRequires:	gtkspell-devel
 BuildRequires:  libtelepathy-glib-devel
 %if %mdvver >= 201100
@@ -50,50 +48,33 @@ serial port: via Bluetooth, IrDA, or a serial cable.
 %setup -q
 
 %build
-%configure2_5x --enable-shared --enable-static
+%configure2_5x \
+	--enable-shared \
+	--enable-static
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 desktop-file-install --vendor="" \
-  --add-category="GTK" \
-  --add-category="GNOME" \
-  --remove-category="Application" \
-  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
+	--add-category="GTK" \
+	--add-category="GNOME" \
+	--remove-category="Application" \
+	--dir %{buildroot}%{_datadir}/applications \
+	%{buildroot}%{_datadir}/applications/*
 
 %find_lang %name
-rm -fv %buildroot%_libdir/gnome-bluetooth/plugins/libphonemgr.a
-
-%clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post
-%update_menus
-%update_icon_cache hicolor
-%post_install_gconf_schemas %{schemas}
-%endif
-
-%preun
-%preun_uninstall_gconf_schemas %{schemas}
-
-%if %mdkversion < 200900
-%postun
-%clean_menus
-%clean_icon_cache hicolor
-%endif
+rm -fv %{buildroot}%{_libdir}/gnome-bluetooth/plugins/libphonemgr.a
 
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc README AUTHORS ChangeLog
 %{_sysconfdir}/gconf/schemas/%{name}.schemas
 %{_bindir}/*
+%{_libexecdir}/telepathy-phoney
+%{_libdir}/gnome-bluetooth/plugins/libphonemgr.*
 %{_datadir}/%name
 %{_datadir}/applications/*.desktop
+%{_datadir}/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.phoney.service
+%{_datadir}/telepathy/managers/phoney.manager
 %{_mandir}/man1/*
-%_libexecdir/telepathy-phoney
-%_libdir/gnome-bluetooth/plugins/libphonemgr.*
-%_datadir/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.phoney.service
-%_datadir/telepathy/managers/phoney.manager
+
