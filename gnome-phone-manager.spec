@@ -8,28 +8,26 @@ License:	GPLv2+
 Group:		Communications
 URL:		http://live.gnome.org/PhoneManager
 Source0:	ftp://ftp.gnome.org/pub/gnome/sources/gnome-phone-manager/%{version}/%{name}-%{version}.tar.xz
-Patch0:		gnome-phone-manager-0.65-format-strings.patch
+# already upstream
+Patch0:		gnome-phone-manager-0.68_bluetooth3.3api.patch
 
 BuildRequires:	desktop-file-utils
 BuildRequires:	gettext
-BuildRequires:  gnome-icon-theme
 BuildRequires:	imagemagick
 BuildRequires:	intltool
-BuildRequires:	libbtctl-devel >= 0.6
-BuildRequires:	gnome-bluetooth-devel
-BuildRequires:	libgnokii-devel gnokii
-BuildRequires:	libglade2.0-devel
-BuildRequires:	librsvg-devel
-BuildRequires:  libGConf2-devel
-BuildRequires:	libevolution-data-server-devel
-BuildRequires:	dbus-glib-devel
-BuildRequires:	gtkspell-devel
-BuildRequires:  libtelepathy-glib-devel
-%if %mdvver >= 201100
-BuildRequires:  libcanberra-gtk-devel
-%else
-BuildRequires:  libcanberra-devel
-%endif
+BuildRequires:	pkgconfig(dbus-glib-1)
+BuildRequires:	pkgconfig(evolution-data-server-1.2)
+BuildRequires:  pkgconfig(gconf-2.0)
+BuildRequires:	pkgconfig(gnokii) gnokii
+BuildRequires:	pkgconfig(gnome-bluetooth-1.0)
+BuildRequires:  pkgconfig(gnome-icon-theme)
+BuildRequires:	pkgconfig(gtkspell-2.0)
+BuildRequires:	pkgconfig(libbtctl)
+BuildRequires:	pkgconfig(libebook-1.2)
+BuildRequires:	pkgconfig(libglade-2.0)
+BuildRequires:	pkgconfig(librsvg-2.0)
+BuildRequires:  pkgconfig(telepathy-glib)
+BuildRequires:  pkgconfig(libcanberra-gtk3)
 
 %description
 Phone Manager allows you to control aspects of your mobile phone from the
@@ -46,12 +44,14 @@ serial port: via Bluetooth, IrDA, or a serial cable.
 
 %prep
 %setup -q
+%apply_patches
 
 %build
 %configure2_5x \
 	--enable-shared \
 	--enable-static
-%make
+
+%make LIBS='-lgthread-2.0'
 
 %install
 %makeinstall_std
@@ -63,7 +63,7 @@ desktop-file-install --vendor="" \
 	--dir %{buildroot}%{_datadir}/applications \
 	%{buildroot}%{_datadir}/applications/*
 
-%find_lang %name
+%find_lang %{name}
 rm -fv %{buildroot}%{_libdir}/gnome-bluetooth/plugins/libphonemgr.a
 
 %files -f %{name}.lang
@@ -72,7 +72,7 @@ rm -fv %{buildroot}%{_libdir}/gnome-bluetooth/plugins/libphonemgr.a
 %{_bindir}/*
 %{_libexecdir}/telepathy-phoney
 %{_libdir}/gnome-bluetooth/plugins/libphonemgr.*
-%{_datadir}/%name
+%{_datadir}/%{name}
 %{_datadir}/applications/*.desktop
 %{_datadir}/dbus-1/services/org.freedesktop.Telepathy.ConnectionManager.phoney.service
 %{_datadir}/telepathy/managers/phoney.manager
