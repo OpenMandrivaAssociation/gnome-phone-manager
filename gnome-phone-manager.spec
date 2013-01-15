@@ -4,9 +4,10 @@ Version: 	0.68
 Release: 	%mkrel 3
 Source0:	ftp://ftp.gnome.org/pub/gnome/sources/gnome-phone-manager/%version/%{name}-%{version}.tar.xz
 Patch0:		gnome-phone-manager-0.68-eds.patch
+Patch1:		gnome-phone-manager-automake-1.13.patch
 URL:		http://live.gnome.org/PhoneManager
 License:	GPLv2+
-Group:		Communications/Mobile
+Group:		Communications
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	GConf2
 BuildRequires:	gnome-common
@@ -43,7 +44,7 @@ serial port: via Bluetooth, IrDA, or a serial cable.
 
 %prep
 %setup -q
-%patch0 -p1
+%apply_patches
 
 %build
 NOCONFIGURE=yes gnome-autogen.sh
