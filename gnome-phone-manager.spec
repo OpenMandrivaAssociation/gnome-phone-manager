@@ -23,7 +23,6 @@ BuildRequires:	pkgconfig(gnokii) >= 0.6.28
 BuildRequires:	pkgconfig(gnome-bluetooth-1.0) >= 3.0
 BuildRequires:	pkgconfig(gnome-icon-theme) >= 2.19.1
 BuildRequires:	pkgconfig(gobject-2.0)
-BuildRequires:	pkgconfig(libedataserverui-3.0)
 BuildRequires:	pkgconfig(gthread-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0
 BuildRequires:	pkgconfig(libcanberra-gtk3)
