@@ -1,7 +1,7 @@
 Summary: 	GNOME Cellular Phone Manager
 Name: 	 	gnome-phone-manager
 Version: 	0.69
-Release: 	4
+Release: 	5
 License:	GPLv2+
 Group:		Communications
 Url:		http://live.gnome.org/PhoneManager
