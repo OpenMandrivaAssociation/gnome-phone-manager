@@ -28,7 +28,8 @@ BuildRequires:	pkgconfig(gtk+-3.0) >= 3.0
 BuildRequires:	pkgconfig(libcanberra-gtk3)
 BuildRequires:	pkgconfig(libebook-1.2)
 BuildRequires:	pkgconfig(telepathy-glib)
-
+BuildRequires:	pkgconfig(gconf-2.0)
+BuildRequires:	GConf2
 %description
 Phone Manager allows you to control aspects of your mobile phone from the
 GNOME desktop.
