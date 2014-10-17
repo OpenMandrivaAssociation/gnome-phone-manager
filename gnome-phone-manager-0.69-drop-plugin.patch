@@ -1,0 +1,26 @@
+--- gnome-phone-manager-0.69/gnome-bluetooth/phonemgr.c.orig	2012-04-20 00:54:42.000000000 +0800
++++ gnome-phone-manager-0.69/gnome-bluetooth/phonemgr.c	2014-04-25 16:36:18.631030893 +0800
+@@ -29,7 +29,7 @@
+ #include <glib/gi18n-lib.h>
+ #include <gconf/gconf-client.h>
+ 
+-#include <bluetooth-plugin.h>
++//#include <bluetooth-plugin.h>
+ #include <bluetooth-client.h>
+ 
+ #include "phonemgr-conf.h"
+@@ -173,7 +173,7 @@
+ 	g_free (str);
+ 	g_object_unref (client);
+ }
+-
++/*
+ static GbtPluginInfo plugin_info = {
+ 	"phonemgr",
+ 	has_config_widget,
+@@ -182,4 +182,4 @@
+ };
+ 
+ GBT_INIT_PLUGIN(plugin_info)
+-
++*/
