@@ -1,7 +1,7 @@
 Summary: 	GNOME Cellular Phone Manager
 Name: 	 	gnome-phone-manager
 Version: 	0.69
-Release: 	12
+Release: 	14
 License:	GPLv2+
 Group:		Communications
 Url:		http://live.gnome.org/PhoneManager
@@ -53,10 +53,10 @@ NOCONFIGURE=yes gnome-autogen.sh
 	--enable-shared \
 	--enable-compile-warnings=no \
 	--enable-cxx-warnings=no
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name}
 
