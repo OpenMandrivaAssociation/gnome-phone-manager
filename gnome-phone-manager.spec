@@ -4,7 +4,7 @@ Version: 	0.69
 Release: 	15
 License:	GPLv2+
 Group:		Communications
-Url:		http://live.gnome.org/PhoneManager
+Url:		https://live.gnome.org/PhoneManager
 Source0:	ftp://ftp.gnome.org/pub/gnome/sources/gnome-phone-manager/%{version}/%{name}-%{version}.tar.xz
 Patch0:		gnome-phone-manager-0.68-eds.patch
 Patch1:		gnome-phone-manager-automake-1.13.patch
