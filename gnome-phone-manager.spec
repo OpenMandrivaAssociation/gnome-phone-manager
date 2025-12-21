@@ -11,6 +11,11 @@ Patch1:		gnome-phone-manager-automake-1.13.patch
 Patch2:		gnome-phone-manager-0.69-adwaita-icon-theme.patch
 Patch3:		gnome-phone-manager-0.69-drop-plugin.patch
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	gnome-common
 BuildRequires:	gettext-devel
 BuildRequires:	gtk-doc
